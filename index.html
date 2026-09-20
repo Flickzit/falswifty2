@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Falswifty - Fast and reliable cross-border payments for businesses. Pay suppliers in USD and RMB and exchange crypto conveniently.">
+
+    <title>Falswifty | Cross-Border Payments Made Simple</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* =========================
+           GLOBAL
+        ========================== */
+
+        :root {
+            --primary: #165c91;
+            --primary-dark: #92abbcfe;
+            --dark: #020409;
+            --text: #05080d;
+            --light-text: #f8fafe;
+            --background:rgba(23, 66, 95, 0.96);
+            --soft-bg: #F8FAFC;
+            --border: #EAECF0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            color: var(--dark);
+            background: var(--background);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1120px, 90%);
+            margin: auto;
+        }
+
+        .section-tag {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .section-title {
+            font-size: clamp(30px, 4vw, 44px);
+            line-height: 1.15;
+            margin-bottom: 15px;
+        }
+
+        .section-description {
+            color: var(--text);
+            max-width: 620px;
+            margin: 0 auto;
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================== */
+
+        header {
+            background: rgba(135, 191, 228, 0.96);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            height: 76px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: 800;
+            color: var(--dark);
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            color: var(--text);
+            font-size: 14px;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-btn {
+            padding: 11px 20px;
+            background: var(--primary);
+            color: white !important;
+            border-radius: 8px;
+        }
+
+        .menu-button {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 27px;
+            cursor: pointer;
+        }
+
+
+
+        .hero {
+            min-height: 680px;
+            display: flex;
+            align-items: center;
+            background:
+                radial-gradient(circle at 80% 30%, rgba(21, 94, 239, 0.495), transparent 25%),
+                linear-gradient(180deg, #ffffff, #f8fbff);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.1fr .9fr;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 8px 13px;
+            background: rgba(135, 191, 228, 0.96);
+            color: var(--primary);
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 6vw, 68px);
+            line-height: 1.05;
+            letter-spacing: -3px;
+            margin-bottom: 22px;
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero-text {
+            max-width: 600px;
+            color: var(--text);
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            padding: 14px 23px;
+            border-radius: 9px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: .2s;
+        }
+
+        .btn-primary {
+            color: white;
+            background:rgba(135, 191, 228, 0.96);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            border: 1px solid #D0D5DD;
+            color: var(--dark);
+            background: white;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+
+        /* HERO VISUAL */
+
+        .payment-card {
+            max-width: 420px;
+            margin-left: auto;
+            padding: 32px;
+            background: rgba(150, 202, 231, 0.742);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            box-shadow: 0 25px 70px rgba(16,24,40,.10);
+        }
+
+        .payment-card-title {
+            color:rgba(61, 76, 85, 0.96) ;
+            font-size: 13px;
+            margin-bottom: 8px;
+        }
+
+        .payment-card h3 {
+            font-size: 27px;
+            margin-bottom: 25px;
+        }
+
+        .currency-row {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+
+        .currency {
+            width: 58px;
+            height: 58px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: #EFF4FF;
+            color: var(--primary);
+            font-weight: 800;
+            font-size: 18px;
+        }
+
+        .transaction {
+            background: var(--soft-bg);
+            border-radius: 12px;
+            padding: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .transaction p {
+            font-size: 13px;
+            color: var(--light-text);
+        }
+
+        .transaction strong {
+            font-size: 14px;
+        }
+
+        
+
+
+        /* =========================
+           SERVICES
+        ========================== */
+
+        .services {
+            padding: 110px 0;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .service-card {
+            border: 1px solid var(--border);
+            padding: 32px;
+            border-radius: 16px;
+            transition: .25s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(16,24,40,.08);
+            border-color: #D1E0FF;
+        }
+
+        .icon {
+            width: 52px;
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #EFF4FF;
+            color: var(--dark);
+            border-radius: 12px;
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 22px;
+        }
+
+        .service-card h3 {
+            margin-bottom: 10px;
+            font-size: 19px;
+        }
+
+        .service-card p {
+            color: var(--soft-bg);
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           WHY FALSWIFTY
+        ========================== */
+
+        .why {
+            background: var(--soft-bg);
+            padding: 110px 0;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: .85fr 1.15fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .why-content p {
+            color: var(--text);
+            margin-top: 20px;
+        }
+
+        .benefits {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .benefit {
+            background: rgb(36, 94, 117);
+            padding: 25px;
+            border-radius: 14px;
+            border: 1px solid var(--border);
+        }
+
+        .benefit-number {
+            color: var(--primary);
+            font-weight: 800;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .benefit h3 {
+            font-size: 16px;
+            margin-bottom: 6px;
+        }
+
+        .benefit p {
+            color: var(--light-text);
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           HOW IT WORKS
+        ========================== */
+
+        .how {
+            padding: 110px 0;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            margin-top: 55px;
+        }
+
+        .step {
+            position: relative;
+        }
+
+        .step-number {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--primary);
+            color: white;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .step h3 {
+            font-size: 17px;
+            margin-bottom: 8px;
+        }
+
+        .step p {
+            color: var(--light-text);
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           CTA
+        ========================== */
+
+        .cta-section {
+            padding: 40px 0 110px;
+        }
+
+        .cta {
+            padding: 75px 30px;
+            background: #0a2438;
+            border-radius: 24px;
+            text-align: center;
+            color: white;
+        }
+
+        .cta h2 {
+            font-size: clamp(30px, 4vw, 44px);
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            color: #D0D5DD;
+            max-width: 600px;
+            margin: 0 auto 28px;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 40px 0;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-content p {
+            color: var(--light-text);
+            font-size: 13px;
+        }
+
+        .socials {
+            display: flex;
+            gap: 20px;
+        }
+
+        .socials a {
+            color: var(--light-text);
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+
+        /* =========================
+           WHATSAPP FLOATING BUTTON
+        ========================== */
+
+        .whatsapp {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            background: #25D366;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 800;
+            font-size: 13px;
+            box-shadow: 0 10px 30px rgba(0,0,0,.18);
+            z-index: 999;
+            transition: .2s;
+        }
+
+        .whatsapp:hover {
+            transform: scale(1.07);
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media (max-width: 850px) {
+
+            .menu-button {
+                display: block;
+            }
+
+            .nav-links {
+                position: absolute;
+                left: 0;
+                top: 76px;
+                width: 100%;
+                padding: 25px 5%;
+                background: white;
+                border-bottom: 1px solid var(--border);
+                flex-direction: column;
+                align-items: flex-start;
+                display: none;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hero {
+                padding: 80px 0;
+            }
+
+            .hero-grid,
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                letter-spacing: -2px;
+            }
+
+            .payment-card {
+                margin: 30px auto 0;
+                width: 100%;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .steps {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .why-grid {
+                gap: 45px;
+            }
+        }
+
+        @media (max-width: 550px) {
+
+            .benefits,
+            .steps {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 44px;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+<!-- ================= NAVIGATION ================= -->
+
+<header>
+    <nav class="container">
+
+        <a href="#" class="logo">
+            Fals<span>wifty</span>
+        </a>
+
+        <div class="nav-links" id="navLinks">
+            <a href="#services">Services</a>
+            <a href="#why">Why Us</a>
+            <a href="#how">How It Works</a>
+            <a href="#contact">Contact</a>
+
+            <a href="#contact" class="nav-btn">
+                Get Started
+            </a>
+        </div>
+
+        <button class="menu-button" id="menuButton">
+            ☰
+        </button>
+
+    </nav>
+</header>
+
+
+<main>
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="container hero-grid">
+
+        <div>
+
+            <div class="hero-badge">
+                Global payments for modern businesses
+            </div>
+
+            <h1>
+                Cross-border payments,
+                <span>made simple.</span>
+            </h1>
+
+            <p class="hero-text">
+                Pay suppliers abroad quickly and conveniently.
+                Falswifty helps businesses make USD and RMB
+                payments while providing reliable crypto exchange
+                services.
+            </p>
+
+            <div class="hero-buttons">
+
+               
+                <a href="https://wa.me/message/OIZUBAWGTHA5D1"
+                   target="_blank"
+                   class="btn btn-primary">
+
+                    Get Started →
+
+                </a>
+
+                <a href="#services"
+                   class="btn btn-secondary">
+
+                    Explore Services
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Hero payment visual -->
+
+        <div class="payment-card">
+
+            <p class="payment-card-title">
+                Global Payment
+            </p>
+
+            <h3>Send with confidence.</h3>
+
+            <div class="currency-row">
+
+                <div class="currency">$</div>
+                <div class="currency">¥</div>
+                <div class="currency">₿</div>
+
+            </div>
+
+            <div class="transaction">
+
+                <div>
+                    <strong>USD Payment</strong>
+                    <p>Supplier payment</p>
+                </div>
+
+                
+
+            </div>
+
+            <div class="transaction">
+
+                <div>
+                    <strong>RMB Payment</strong>
+                    <p>Supplier payment</p>
+                </div>
+
+                
+
+            </div>
+
+            <div class="transaction">
+
+                <div>
+                    <strong>Crypto Exchange</strong>
+                    <p>Fast exchange</p>
+                </div>
+
+               
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SERVICES ================= -->
+
+<section class="services" id="services">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-tag">Our Services</div>
+
+            <h2 class="section-title">
+                Payments built for your business.
+            </h2>
+
+            <p class="section-description">
+                Simple payment solutions designed to help
+                businesses transact across borders.
+            </p>
+
+        </div>
+
+
+        <div class="services-grid">
+
+            <div class="service-card">
+
+                <div class="icon">$</div>
+
+                <h3>USD Payments</h3>
+
+                <p>
+                    Make USD payments to suppliers and business
+                    partners abroad fast and conveniently.
+                </p>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="icon">¥</div>
+
+                <h3>RMB Payments</h3>
+
+                <p>
+                    Pay suppliers in China with a simple and
+                    reliable RMB payment process.
+                </p>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="icon">₿</div>
+
+                <h3>Crypto Exchange</h3>
+
+                <p>
+                    Convenient crypto exchange services with
+                    competitive rates and responsive support.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= WHY US ================= -->
+
+<section class="why" id="why">
+
+    <div class="container why-grid">
+
+        <div class="why-content">
+
+            <div class="section-tag">
+                Why Falswifty?
+            </div>
+
+            <h2 class="section-title">
+                Business shouldn't stop at borders.
+            </h2>
+
+            <p>
+                We make cross-border transactions easier so you
+                can focus on your customers, inventory and
+                business growth.
+            </p>
+
+        </div>
+
+
+        <div class="benefits">
+
+            <div class="benefit">
+
+                <div class="benefit-number">01</div>
+
+                <h3>Fast Payments</h3>
+
+                <p>
+                    Keep your orders and supply chain moving.
+                </p>
+
+            </div>
+
+
+            <div class="benefit">
+
+                <div class="benefit-number">02</div>
+
+                <h3>Secure Transactions</h3>
+
+                <p>
+                    Secured and reliable payment process.
+                </p>
+
+            </div>
+
+
+            <div class="benefit">
+
+                <div class="benefit-number">03</div>
+
+                <h3>Competitive Rates</h3>
+
+                <p>
+                    Business-friendly rates for your transactions.
+                </p>
+
+            </div>
+
+
+            <div class="benefit">
+
+                <div class="benefit-number">04</div>
+
+                <h3>Business Friendly</h3>
+
+                <p>
+                    Built around the needs of importers and businesses.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= HOW IT WORKS ================= -->
+
+<section class="how" id="how">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-tag">
+                How It Works
+            </div>
+
+            <h2 class="section-title">
+                Four simple steps.
+            </h2>
+
+            <p class="section-description">
+                From requesting a rate to completing your payment,
+                we've kept the process straightforward.
+            </p>
+
+        </div>
+
+
+        <div class="steps">
+
+            <div class="step">
+
+                <div class="step-number">1</div>
+
+                <h3>Contact Us</h3>
+
+                <p>
+                    Tell us the currency and amount you need to send.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">2</div>
+
+                <h3>Get Your Rate</h3>
+
+                <p>
+                    Receive the current rate and transaction details.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">3</div>
+
+                <h3>Make Payment</h3>
+
+                <p>
+                    Complete your side of the transaction.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">4</div>
+
+                <h3>Payment Completed</h3>
+
+                <p>
+                    Your transaction is processed and confirmed.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CTA ================= -->
+
+<section class="cta-section" id="contact">
+
+    <div class="container">
+
+        <div class="cta">
+
+            <h2>
+                Ready to make your next payment?
+            </h2>
+
+            <p>
+                Contact Falswifty today for your USD, RMB
+                and crypto exchange needs.
+            </p>
+
+            <!-- Replace number -->
+
+            <a href="https://wa.me/message/OIZUBAWGTHA5D1"
+               target="_blank"
+               class="btn btn-primary">
+
+                Contact Falswifty →
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="container footer-content">
+
+        <div>
+
+            <a href="#" class="logo">
+                Fals<span>wifty</span>
+            </a>
+
+            <p>
+                © <span id="year"></span> Falswifty.
+                All rights reserved.
+            </p>
+
+        </div>
+
+
+        <div class="socials">
+
+          
+
+            <a href="https://www.instagram.com/falswifty/" target="_blank">
+                Instagram
+            </a>
+
+           
+            <a href="https://wa.me/message/OIZUBAWGTHA5D1"
+               target="_blank">
+
+                WhatsApp
+
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- Floating WhatsApp button -->
+
+<a href="https://wa.me/message/OIZUBAWGTHA5D1"
+   target="_blank"
+   class="whatsapp"
+   aria-label="Contact Falswifty on WhatsApp">
+
+    WA
+
+</a>
+
+
+<script>
+
+    // Mobile menu
+
+    const menuButton = document.getElementById("menuButton");
+    const navLinks = document.getElementById("navLinks");
+
+    menuButton.addEventListener("click", () => {
+
+        navLinks.classList.toggle("active");
+
+        if (navLinks.classList.contains("active")) {
+            menuButton.innerHTML = "✕";
+        } else {
+            menuButton.innerHTML = "☰";
+        }
+
+    });
+
+
+    // Close menu after selecting a link
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            navLinks.classList.remove("active");
+            menuButton.innerHTML = "☰";
+
+        });
+
+    });
+
+
+    // Automatically update copyright year
+
+    document.getElementById("year").textContent =
+        new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
