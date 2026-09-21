@@ -13,7 +13,7 @@
 }
 
 body{
-    background:linear-gradient(90deg, #8a8b8e, #0091dc);
+    background:linear-gradient(90deg, #def6fe, #207db3);
     color:#101010;
 }
 
@@ -21,7 +21,7 @@ header{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:25px 8%;
+    padding:15px 8%;
 }
 
 .logo img {
@@ -32,13 +32,13 @@ header{
 
 nav a{
     text-decoration:none;
-    color:#e2e8f0;
+    color:#1b3b50;
     margin-left:25px;
     font-size:14px;
 }
 
 nav a:hover{
-    color:#22d3ee;
+    color:#67cfec;
 }
 
 .container{
@@ -60,22 +60,32 @@ nav a:hover{
 }
 
 .contact-info p{
-    color:#cbd5e1;
+    color:#292b2b;
     margin-bottom:15px;
 }
 
-.info-box{
+.cta-line1{
+    flex:1;
+    min-width:260px;
+}
+
+.cta-line1 {
+    color:#063c4a;
+    margin-bottom: 15px;
+}
+
+.info-line {
     margin-top:20px;
 }
 
-.info-box strong{
-    color:#22d3ee;
+.info-line strong{
+    color:lab(21.84% -5.33 -18.88);
 }
 
 .contact-form{
     flex:1;
     min-width:300px;
-    background:rgba(255,255,255,0.08);
+    background:rgba(7, 86, 128, 0.215);
     padding:40px;
     border-radius:20px;
     backdrop-filter:blur(15px);
@@ -105,7 +115,7 @@ nav a:hover{
     padding:14px;
     border:none;
     border-radius:8px;
-    background:linear-gradient(90deg,#22d3ee,#3b82f6);
+    background:linear-gradient(90deg,#195d8e,#1f4b60);
     font-weight:600;
     cursor:pointer;
 }
@@ -137,7 +147,7 @@ footer{
         <img src="images/logo.png" alt="Falswifty Logo">
         </a>
     <nav>
-        <a href="index.html">Home</a>
+        <a href="index.html"><strong>Home</strong></a>
        
     </nav>
 </header>
@@ -146,13 +156,17 @@ footer{
 
     <div class="contact-info">
         <h2>Let’s Build Global Commerce Together</h2>
-        <p>
-            Whether you're expanding your business globally or need support with cross-border payments,
-            our team is here to help.
-        </p>
-
-        <div class="info-box">
-            <p><strong>Email:</strong> support@falswifty.com</p>
+        <p><strong>
+    <div class="cta-line1">       
+            Need support with cross-border payments ?</strong> </p>
+        <p>    
+            our team is here to help your business <br>process every international payment seamlessly.
+       </div>
+        
+        <div class="info-line">
+            <p><strong>Email:</strong>
+            <a href="mailto:support@falswifty.com" target="_blank">support@falswifty.com</a>
+            </p>
             <p><strong>Phone:</strong> +234 813 577 9839</p>
             <p><strong>Location:</strong> Lagos, Nigeria</p>
            
@@ -186,7 +200,7 @@ footer{
 </section>
 
 <footer>
-    © 2026 FalSwifty. Globalpayment with confidence
+    © 2026 FalSwifty. Global payment with confidence
 </footer>
 
 
