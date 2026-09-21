@@ -617,15 +617,20 @@
 
     }
     
-    
+}
     
     @media (max-width: 768px) {
-    .body {
+    body {
          body {
         width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
         overflow-x: hidden;
     }
-
+    header {
+    width: 100%;
+    }
     /* ===== MOBILE NAVIGATION ===== */
 
     .menu-button {
@@ -660,20 +665,24 @@
 }
 
 .hero {
-    min-height: auto;
-    padding: 100px 0 60px;
+    width: 100%;
+    max-width: 100%;
 }
 
-.hero-grid > * {
-    min-width: 0;
+.hero-grid {
     width: 100%;
+    max-width: 100%;
+    grid-template-columns: 1fr;
+    gap: 40px;
 }
 
     .container {
-        width: 100%;
-        max-width: 100%;
-        padding-left: 20px;
-        padding-right: 20px;
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
     }
 
     .hero {
