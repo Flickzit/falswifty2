@@ -589,8 +589,8 @@
 
     .container {
         width: 100%;
-        padding-left: 10;
-        padding-right: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
     }
 
     .hero {
@@ -606,7 +606,7 @@
     }
 
     .hero p {
-        font-size: auto;
+        font-size: 16px;
         line-height: 1.6;
         color: #1c1f1dc3;
     }
@@ -616,36 +616,79 @@
         height: auto;
 
     }
-    width: 100%;
-    max-width: 100%;
     
     
-    @media (max-width: 768px) 
-    body {
-        width:100%;
+    
+    @media (max-width: 768px) {
+    .body {
+         body {
+        width: 100%;
         overflow-x: hidden;
     }
 
+    /* ===== MOBILE NAVIGATION ===== */
+
+    .menu-button {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 20px;
+        right: 20px;
+        background: white;
+        padding: 20px;
+        border-radius: 12px;
+        gap: 15px;
+        z-index: 1000;
+    }
+        width:100%;
+        max-width: 100px;
+        overflow-x: hidden;
+    }
+    .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    width: 100%;
+}
+
+.hero {
+    min-height: auto;
+    padding: 100px 0 60px;
+}
+
+.hero-grid > * {
+    min-width: 0;
+    width: 100%;
+}
+
     .container {
         width: 100%;
-        padding-left: 10;
-        padding-right: 10px;
+        max-width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
     }
 
     .hero {
-        min-height: 100vh;
-        padding: 100px 20px 50px;
+        min-height: auto;
+        padding: 100px 20px 60px;
     }
 
     .hero h1 {
-        font-size: 20px;
-        line-height: 1.0;
-        word-spacing: normal;
-        letter-spacing: normal;
+        font-size: 42px;
+        line-height: 1.05;
+        letter-spacing: -1px;
     }
 
     .hero p {
-        font-size: auto;
+        font-size: 16px;
         line-height: 1.6;
         color: #1c1f1dc3;
     }
@@ -655,8 +698,8 @@
         height: auto;
 
     }
-    width: 100%;
-    max-width: 100%;
+        width: 100%;
+        max-width: 100%;
     .market-rates {
         padding: 100px 20px 50px;
         
