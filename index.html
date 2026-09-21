@@ -616,21 +616,38 @@
         height: auto;
 
     }
-    
 }
     
-    @media (max-width: 768px) {
+
+    
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+    html,
     body {
-         body {
         width: 100%;
         max-width: 100%;
         margin: 0;
         padding: 0;
         overflow-x: hidden;
     }
+
     header {
-    width: 100%;
+        width: 100%;
     }
+
+    .container {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+        box-sizing: border-box;
+    }
+}
+
     /* ===== MOBILE NAVIGATION ===== */
 
     .menu-button {
@@ -654,68 +671,51 @@
         gap: 15px;
         z-index: 1000;
     }
-        width:100%;
-        max-width: 100px;
-        overflow-x: hidden;
-    }
-    .hero-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-    width: 100%;
-}
 
-.hero {
-    width: 100%;
-    max-width: 100%;
-}
-
-.hero-grid {
-    width: 100%;
-    max-width: 100%;
-    grid-template-columns: 1fr;
-    gap: 40px;
-}
-
-    .container {
-    width: 100%;
-    max-width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 20px;
-    padding-right: 20px;
-    }
+    /* ===== MOBILE HERO ===== */
 
     .hero {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
         min-height: auto;
-        padding: 100px 20px 60px;
+        padding: 100px 0 60px;
+    }
+
+    .hero-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 40px;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    .hero-grid > * {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
     }
 
     .hero h1 {
-        font-size: 42px;
-        line-height: 1.05;
-        letter-spacing: -1px;
+        font-size: 38px;
+        line-height: 1.1;
     }
 
     .hero p {
         font-size: 16px;
         line-height: 1.6;
-        color: #1c1f1dc3;
     }
 
     img {
         max-width: 100%;
         height: auto;
+    }
 
-    }
-        width: 100%;
-        max-width: 100%;
-    .market-rates {
-        padding: 100px 20px 50px;
-        
-      
-    }
+
     /* phone/tablet layout */
-}
+
 @media (max-width: 480px) {
 
     .hero h1 {
@@ -743,7 +743,7 @@
 <header>
     <nav class="container">
 
-         <a href="/" class="logo">
+    <a href="/"<a>class="logo">
     <img src="images/logo.png" alt="Falswifty Logo">
     </a>
 
