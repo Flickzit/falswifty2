@@ -76,26 +76,28 @@
             margin: 0 auto;
         }
 
-
-
-        /* ==================================================
+      /* ==================================================
            HERO
         ================================================== */
 
         .hero {
-            min-height: 100vh;
+    min-height: 100vh;
 
-            background: linear-gradient(90deg, #def6fec4, #207db3);
+    background:
+        linear-gradient(
+            315deg,
+            rgba(12, 45, 89, 0.95) 0%,
+            rgba(9, 51, 88, 0.85) 45%,
+            rgba(234, 234, 235, 0.58) 100%
+        ),
+        url("images/hero.bg.jpg");
 
-                
-                url("/images/bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-
-            color: var(--dark);
-        }
+    color: #232222;
+}
 
 
 
@@ -105,7 +107,8 @@
 
         header {
             padding: 20px 0;
-            margin-top: -50px;
+            margin-top: -60px;
+            
         }
 
         nav {
@@ -118,6 +121,7 @@
 
         .logo img {
             width: 145px;
+            
         }
 
         .nav-links {
@@ -134,7 +138,7 @@
         }
 
         .nav-links a:hover {
-            color: #367ecb;
+            color: #fdfdfd;
         }
 
         .nav-contact {
@@ -147,7 +151,7 @@
         .menu-button {
             display: none;
 
-            border: 0;
+            border: wheat;
             background: transparent;
 
             color: rgb(8, 8, 8);
@@ -200,14 +204,14 @@
         .hero-copy h1 {
             max-width: 680px;
 
-            font-size: clamp(55px, 5.7vw, 84px);
-            line-height: .96;
+            font-size: clamp(50px, 5.7vw, 80px);
+            line-height: .91;
 
             letter-spacing: -4px;
         }
 
         .hero-copy h1 span {
-            color: #135cb1;
+            color: #fafafa;
         }
 
         .hero-description {
@@ -215,14 +219,15 @@
 
             margin-top: 28px;
 
-            color: #333334;
+            color: #000301;
 
-            font-size: 18px;
+            font-size: 16px;
             line-height: 1.7;
         }
 
         .hero-description strong {
             color: #000000;
+
         }
 
 
