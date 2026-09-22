@@ -1,0 +1,2768 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Falswifty helps businesses make cross-border USD and RMB payments and exchange crypto conveniently.">
+
+    <title>Falswifty | Global Payments</title>
+
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+
+        :root {
+            --primary: #165c91;
+            --primary-dark: #92abbcfe;
+            --dark: #020409;
+            --text: #05080d;
+            --light-text: #f8fafe;
+            --background:rgba(23, 66, 95, 0.96);
+            --soft-bg: #F8FAFC;
+            --border: #eaecf005;
+            --newbg:linear-gradient(90deg, #def6fe, #207db3);
+            --newtxt:rgb(13, 101, 149);
+            --fadebk:rgba(49, 50, 51, 0.67);
+            --fadebg:linear-gradient(90deg, #f9f9f9de, #207db390);
+        }
+
+        /* ==================================================
+           RESET
+        ================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: var(--light-text);
+            color: (rgb(20, 2, 2));
+            overflow-x: hidden;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        button {
+            font: inherit;
+        }
+
+        .container {
+            width: min(1180px, 90%);
+            margin: 0 auto;
+        }
+
+
+
+        /* ==================================================
+           HERO
+        ================================================== */
+
+        .hero {
+            min-height: 100vh;
+
+            background: linear-gradient(90deg, #def6fec4, #207db3);
+
+                
+                url("/images/bg.jpg");
+
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            color: var(--dark);
+        }
+
+
+
+        /* ==================================================
+           NAVIGATION
+        ================================================== */
+
+        header {
+            padding: 20px 0;
+        }
+
+        nav {
+            position: relative;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo img {
+            width: 145px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .nav-links a {
+            color: #0d0d0d;
+            font-size: 14px;
+            font-weight: 600;
+            transition: .25s ease;
+        }
+
+        .nav-links a:hover {
+            color: #367ecb;
+        }
+
+        .nav-contact {
+            padding: 11px 19px;
+            border: 1px solid rgba(255,255,255,.65);
+            border-radius: 50px;
+            background: var(--primary);
+        }
+
+        .menu-button {
+            display: none;
+
+            border: 0;
+            background: transparent;
+
+            color: rgb(8, 8, 8);
+            font-size: 30px;
+
+            cursor: pointer;
+        }
+
+
+
+        /* ==================================================
+           HERO CONTENT
+        ================================================== */
+
+        .hero-content {
+            min-height: calc(100vh - 85px);
+
+            display: grid;
+
+            grid-template-columns:
+                minmax(0, 1.12fr)
+                minmax(350px, .88fr);
+
+            align-items: center;
+
+            gap: 70px;
+
+            padding: 55px 0 80px;
+        }
+
+        .hero-copy {
+            min-width: 0;
+        }
+
+        .eyebrow {
+            display: inline-block;
+
+            margin-bottom: 24px;
+
+            font-size: 12px;
+            font-weight: 700;
+
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+
+            color: #1c5597;
+        }
+
+        .hero-copy h1 {
+            max-width: 680px;
+
+            font-size: clamp(55px, 5.7vw, 84px);
+            line-height: .96;
+
+            letter-spacing: -4px;
+        }
+
+        .hero-copy h1 span {
+            color: #135cb1;
+        }
+
+        .hero-description {
+            max-width: 580px;
+
+            margin-top: 28px;
+
+            color: #333334;
+
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        .hero-description strong {
+            color: #000000;
+        }
+
+
+
+        /* ==================================================
+           BUTTONS
+        ================================================== */
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: 14px;
+
+            margin-top: 32px;
+        }
+
+        .btn {
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            padding: 16px 24px;
+
+            border-radius: 10px;
+
+            font-size: 14px;
+            font-weight: 700;
+
+            transition: .25s ease;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: #ffffff;
+        }
+
+        .btn-primary:hover {
+            background: #064a99;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            color: #ffffff;
+            border: 1px solid rgba(255,255,255,.8);
+        }
+
+        .btn-outline:hover {
+            background: #ffffff81;
+            color: #0b1728;
+        }
+
+
+
+        /* ==================================================
+           HERO BENEFITS
+        ================================================== */
+
+        .hero-features {
+            max-width: 590px;
+
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+
+            margin-top: 50px;
+        }
+
+        .feature {
+            padding-right: 17px;
+            border-right: 2px solid rgba(11, 80, 154, 0);
+        }
+
+        .feature:last-child {
+            border-right: none;
+        }
+
+        .feature-icon {
+            width: 43px;
+            height: 43px;
+
+            display: grid;
+            place-items: center;
+
+            margin-bottom: 10px;
+
+            border-radius: 50%;
+
+            background: 0;
+            border-color: #03ab5f;
+
+            font-size: 18px;
+            font-weight: 800;
+        }
+
+        .feature strong {
+            display: block;
+
+            font-size: 13px;
+            line-height: 1.4;
+        }
+
+
+
+        /* ==================================================
+           LIVE MARKET CARD
+        ================================================== */
+
+        .rate-card {
+            width: 100%;
+            max-width: 425px;
+
+            justify-self: end;
+
+            padding: 26px;
+
+            border: 1px solid rgba(255, 255, 255, 0);
+            border-radius: 30px;
+
+            background: rgba(23, 76, 114, 0.76);
+
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.411);
+        }
+
+        .rate-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+
+            gap: 15px;
+
+            margin-bottom: 20px;
+        }
+
+        .rate-header h2 {
+            font-size: 23px;
+        }
+
+        .rate-subtitle {
+            margin-top: 6px;
+
+            color: #cbd8e5;
+
+            font-size: 12px;
+        }
+
+        .live {
+            flex-shrink: 0;
+
+            display: flex;
+            align-items: center;
+
+            gap: 7px;
+
+            padding: 8px 12px;
+
+            border-radius: 30px;
+
+            background: rgba(22,163,74,.18);
+
+            color: #84f3a7;
+
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        .live-pulse {
+            width: 8px;
+            height: 8px;
+
+            border-radius: 50%;
+
+            background: #22c55e;
+
+            animation: livePulse 0.8s infinite;
+        }
+
+        @keyframes livePulse {
+
+            0% {
+                box-shadow: 0 0 0 0 rgba(34,197,94,.65);
+            }
+
+            70% {
+                box-shadow: 0 0 0 8px rgba(34,197,94,0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(34,197,94,0);
+            }
+        }
+
+        .rate-item {
+            display: flex;
+
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 15px;
+
+            margin-bottom: 10px;
+            padding: 14px;
+
+            border-radius: 13px;
+
+            background: #f7f9fc;
+            color: #101827;
+
+            transition: .25s ease;
+        }
+
+        .rate-item:hover {
+            transform: translateY(-1px);
+        }
+
+        .coin {
+            display: flex;
+            align-items: center;
+
+            gap: 12px;
+        }
+
+        .coin-icon {
+            width: 44px;
+            height: 44px;
+
+            flex-shrink: 0;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 50%;
+
+            color: rgb(255, 255, 255);
+
+            font-size: 18px;
+            font-weight: 800;
+        }
+
+        .btc {
+            background: #f7931a;
+        }
+
+        .eth {
+            background: #627eea;
+        }
+
+        .usdt {
+            background: #26a17b;
+        }
+
+        .ngn {
+            background: #008751;
+        }
+
+        .coin-name strong {
+            display: block;
+
+            font-size: 14px;
+        }
+
+        .coin-name span {
+            display: block;
+
+            margin-top: 3px;
+
+            color: #718096;
+
+            font-size: 12px;
+        }
+
+        .price {
+            text-align: right;
+            white-space: nowrap;
+        }
+
+        .price strong {
+            display: block;
+
+            font-size: 15px;
+
+            transition:
+                color .25s ease,
+                transform .25s ease;
+        }
+
+        .price-change {
+            display: block;
+
+            min-height: 14px;
+
+            margin-top: 5px;
+
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        .price-change.up {
+            color: #16a34a;
+        }
+
+        .price-change.down {
+            color: #dc2626;
+        }
+
+        .price-change.neutral {
+            color: #7c8796;
+        }
+
+        .price-up-flash {
+            color: #16a34a !important;
+            transform: translateY(-2px);
+        }
+
+        .price-down-flash {
+            color: #dc2626 !important;
+            transform: translateY(2px);
+        }
+
+        .rate-footer {
+            display: flex;
+
+            justify-content: space-between;
+            align-items: center;
+
+            gap: 10px;
+
+            margin-top: 16px;
+
+            color: #cbd6e2;
+
+            font-size: 10px;
+        }
+
+        #lastUpdated {
+            text-align: right;
+        }
+
+
+
+        /* ==================================================
+           COMMON SECTION STYLES
+        ================================================== */
+
+        .section-label {
+            display: inline-block;
+
+            margin-bottom: 15px;
+
+            padding: 8px 15px;
+
+            border-radius: 30px;
+
+            background: #dceeff;
+            color: #3486d2;
+
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+
+
+        /* ==================================================
+           SERVICES
+        ================================================== */
+
+        .services {
+            padding: 105px 0;
+            background: #f7f8f9;
+        }
+
+        .services-layout {
+            display: grid;
+
+            grid-template-columns: .9fr 1.6fr;
+
+            gap: 70px;
+
+            align-items: center;
+        }
+
+        .services-intro h2 {
+            font-size: 46px;
+            line-height: 1.05;
+
+            letter-spacing: -2px;
+        }
+
+        .services-intro p {
+            margin-top: 20px;
+
+            color: #4b4c4e;
+
+            line-height: 1.7;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+        .service-card {
+            min-height: 250px;
+
+            padding: 30px 25px;
+
+            border: 1px solid #e8eef5;
+            border-radius: 18px;
+
+            background: var(--primary-dark);
+
+            box-shadow: 0 10px 30px rgba(20,60,100,.05);
+
+            transition: .25s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+
+            box-shadow: 0 18px 40px rgba(20,60,100,.10);
+        }
+
+        .service-icon {
+            margin-bottom: 25px;
+
+            font-size: 0px;
+        }
+
+        .service-card h3 {
+            margin-bottom: 10px;
+
+            font-size: 18px;
+            
+        }
+
+        .service-card p {
+            color: #fcfcfd;
+
+            font-size: 14px;
+            line-height: 1.65;
+        }
+
+
+
+        /* ==================================================
+           WHY US
+        ================================================== */
+
+        .why-us {
+            padding: 105px 0;
+
+            background:linear-gradient(90deg, #f9f9f9de, #207db390);
+
+        }
+
+        .section-heading {
+            max-width: 690px;
+
+            margin-bottom: 55px;
+        }
+
+        .section-heading h2 {
+            font-size: 48px;
+            line-height: 1.05;
+
+            letter-spacing: -2px;
+        }
+
+        .section-heading p {
+            margin-top: 20px;
+
+            color: #657487;
+
+            line-height: 1.7;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 20px;
+        }
+
+        .why-card {
+            padding: 30px;
+
+            border: 1px solid #e5edf5;
+            border-radius: 18px;
+
+            background: #ffffff;
+
+            transition: .25s ease;
+        }
+
+        .why-card:hover {
+            transform: translateY(-5px);
+
+            box-shadow: 0 18px 45px rgba(15,70,120,.10);
+        }
+
+        .why-icon {
+            width: 52px;
+            height: 52px;
+
+            display: grid;
+            place-items: center;
+
+            margin-bottom: 25px;
+
+            border-radius: 50%;
+
+            background: #e5f2ff;
+            color:var(--primary);
+
+            font-size: 21px;
+            font-weight: 800;
+        }
+
+        .why-card h3 {
+            margin-bottom: 12px;
+
+            font-size: 18px;
+        }
+
+        .why-card p {
+            color: #657487;
+
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+
+
+        /* ==================================================
+           HOW IT WORKS
+        ================================================== */
+
+        .how-it-works {
+            padding: 105px 0;
+
+            background: #f7fbff;
+        }
+
+        .how-heading {
+            max-width: 690px;
+
+            margin: 0 auto 65px;
+
+            text-align: center;
+        }
+
+        .how-heading h2 {
+            font-size: 48px;
+
+            letter-spacing: -2px;
+        }
+
+        .how-heading p {
+            margin-top: 15px;
+
+            color: #657487;
+
+            line-height: 1.7;
+        }
+
+        .steps {
+            display: grid;
+
+            grid-template-columns:
+                1fr auto
+                1fr auto
+                1fr auto
+                1fr;
+
+            gap: 18px;
+
+            align-items: center;
+        }
+
+        .step {
+            position: relative;
+
+            min-height: 285px;
+
+            padding: 30px 25px;
+
+            border: 1px solid #e5edf5;
+            border-radius: 18px;
+
+            background: #ffffff;
+        }
+
+        .step-number {
+            position: absolute;
+
+            top: 18px;
+            right: 18px;
+
+            width: 30px;
+            height: 30px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 50%;
+
+            background: #0b5998ca;
+            color: rgb(218, 218, 218);
+
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+        .step-icon {
+            width: 52px;
+            height: 52px;
+
+            display: grid;
+            place-items: center;
+
+            margin-bottom: 25px;
+
+            border-radius: 50%;
+
+            background: #e5f2ff;
+            color: #0b5998ca;
+
+            font-size: 22px;
+        }
+
+        .step h3 {
+            margin-bottom: 12px;
+
+            font-size: 18px;
+        }
+
+        .step p {
+            color: #657487;
+
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .step-arrow {
+            color: #76b8fb;
+
+            font-size: 27px;
+        }
+
+        .how-action {
+            margin-top: 45px;
+
+            text-align: center;
+        }
+
+
+
+        /* ==================================================
+           CTA
+        ================================================== */
+
+        .cta-section {
+            padding: 90px 0;
+
+            background: #ffffff;
+        }
+
+        .cta {
+            display: flex;
+
+            justify-content: space-between;
+            align-items: center;
+
+            gap: 40px;
+
+            padding: 55px;
+
+            border-radius: 22px;
+
+            color: #ffffff;
+
+            background:
+                radial-gradient(
+                    circle at 60% 50%,
+                    rgba(17,123,226,.35),
+                    transparent 35%
+                ),
+                linear-gradient(
+                    100deg,
+                    #064f91,
+                    #002b54
+                );
+        }
+
+        .cta h2 {
+            max-width: 570px;
+
+            font-size: 40px;
+            line-height: 1.1;
+        }
+
+        .cta p {
+            margin-top: 12px;
+
+            color: #dcecff;
+        }
+
+        .whatsapp-button {
+            display: inline-block;
+
+            padding: 18px 28px;
+
+            border-radius: 10px;
+
+            background: #13b85c;
+            color: #ffffff;
+
+            font-weight: 700;
+
+            white-space: nowrap;
+
+            transition: .25s ease;
+        }
+
+        .whatsapp-button:hover {
+            color: #008751;
+            transform: translateY(-2px);
+        }
+
+
+
+        /* ==================================================
+           FOOTER
+        ================================================== */
+
+        footer {
+            padding: 65px 0 30px;
+
+            background: #061525;
+
+            color: #ffffff;
+        }
+
+        .footer-grid {
+            display: grid;
+
+            grid-template-columns:
+                1.5fr 1fr 1fr 1fr;
+
+            gap: 50px;
+        }
+
+        .footer-logo {
+            width: 145px;
+
+            margin-bottom: 20px;
+        }
+
+        .footer-about p {
+            max-width: 320px;
+
+            color: #9dadbc;
+
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .footer-column h4 {
+            margin-bottom: 20px;
+
+            font-size: 14px;
+        }
+
+        .footer-column a {
+            display: block;
+
+            margin-bottom: 11px;
+
+            color: #aebdca;
+
+            font-size: 13px;
+        }
+
+        .footer-column a:hover {
+            color: #ffffff;
+        }
+
+        .footer-bottom {
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            margin-top: 50px;
+            padding-top: 25px;
+
+            border-top: 1px solid rgba(255,255,255,.1);
+
+            color: #8394a5;
+
+            font-size: 12px;
+        }
+
+
+
+        /* ==================================================
+           MOBILE
+        ================================================== */
+
+        @media (max-width: 768px) {
+
+            .container {
+                width: 90%;
+                max-width: 100%;
+            }
+
+
+            /* NAV */
+
+            header {
+                padding: 15px 0;
+            }
+
+            .logo img {
+                width: 125px;
+            }
+
+            .menu-button {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+
+                position: absolute;
+
+                top: 55px;
+                left: 0;
+                right: 0;
+
+                z-index: 1000;
+
+                flex-direction: column;
+                align-items: flex-start;
+
+                gap: 8px;
+
+                padding: 20px;
+
+                border-radius: 15px;
+
+                background: #ffffff;
+
+                box-shadow: 0 20px 50px rgba(0,0,0,.18);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                width: 100%;
+
+                padding: 8px 0;
+
+                color: #0b1728;
+            }
+
+            .nav-contact {
+                border: 0;
+                padding: 8px 0;
+            }
+
+
+            /* HERO */
+
+            .hero {
+                min-height: auto;
+                background-position: center;
+            }
+
+            .hero-content {
+                min-height: auto;
+
+                grid-template-columns: minmax(0, 1fr);
+
+                gap: 45px;
+
+                padding: 60px 0 70px;
+            }
+
+            .hero-copy h1 {
+                font-size: 48px;
+                line-height: 1;
+
+                letter-spacing: -2px;
+            }
+
+            .hero-description {
+                font-size: 16px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .hero-features {
+                grid-template-columns: repeat(2, 1fr);
+
+                gap: 25px;
+            }
+
+            .feature {
+                border: 0;
+            }
+
+
+            /* RATE CARD */
+
+            .rate-card {
+                width: 100%;
+                max-width: 100%;
+
+                justify-self: stretch;
+            }
+
+
+            /* SERVICES */
+
+            .services {
+                padding: 70px 0;
+            }
+
+            .services-layout {
+                grid-template-columns: 1fr;
+
+                gap: 40px;
+            }
+
+            .services-intro h2 {
+                font-size: 36px;
+            }
+
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service-card {
+                min-height: auto;
+            }
+
+
+            /* WHY */
+
+            .why-us {
+                padding: 70px 0;
+            }
+
+            .section-heading {
+                margin-bottom: 40px;
+            }
+
+            .section-heading h2 {
+                font-size: 36px;
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr;
+
+                gap: 15px;
+            }
+
+
+            /* HOW */
+
+            .how-it-works {
+                padding: 70px 0;
+            }
+
+            .how-heading {
+                margin-bottom: 40px;
+
+                text-align: left;
+            }
+
+            .how-heading h2 {
+                font-size: 36px;
+            }
+
+            .steps {
+                grid-template-columns: 1fr;
+
+                gap: 15px;
+            }
+
+            .step {
+                min-height: auto;
+            }
+
+            .step-arrow {
+                display: none;
+            }
+
+            .how-action {
+                text-align: left;
+            }
+
+
+            /* CTA */
+
+            .cta-section {
+                padding: 60px 0;
+            }
+
+            .cta {
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                padding: 35px 25px;
+            }
+
+            .cta h2 {
+                font-size: 30px;
+            }
+
+            .whatsapp-button {
+                width: 100%;
+
+                text-align: center;
+            }
+
+
+            /* FOOTER */
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+
+                gap: 40px;
+            }
+
+        }
+
+
+
+        /* ==================================================
+           SMALL PHONES
+        ================================================== */
+
+        @media (max-width: 480px) {
+
+            .hero-copy h1 {
+                font-size: 42px;
+            }
+
+            .eyebrow {
+                font-size: 10px;
+
+                letter-spacing: 1.5px;
+            }
+
+            .rate-card {
+                padding: 18px;
+            }
+
+            .rate-header h2 {
+                font-size: 20px;
+            }
+
+            .coin-icon {
+                width: 40px;
+                height: 40px;
+            }
+
+            .price strong {
+                font-size: 14px;
+            }
+
+            .rate-footer {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            #lastUpdated {
+                text-align: left;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ==================================================
+     HERO
+================================================== -->
+
+<section class="hero" id="home">
+
+    <header>
+
+        <nav class="container">
+
+            <a href="/" class="logo">
+
+                <img src="images/logo.png" alt="falswifty logo">
+
+            </a>
+
+
+            <div class="nav-links" id="navLinks">
+
+                <a href="/">
+                    Home
+                </a>
+
+                <a href="#services">
+                    Services
+                </a>
+
+                <a href="#why">
+                    Why Us
+                </a>
+
+                <a href="#how">
+                    How It Works
+                </a>
+
+                <a
+                    href="/contact/"
+                    class="nav-contact">
+
+                    Contact Us
+
+                </a>
+
+            </div>
+
+
+            <button
+                class="menu-button"
+                id="menuButton"
+                aria-label="Open navigation menu">
+
+                ☰
+
+            </button>
+
+        </nav>
+
+    </header>
+
+
+
+    <div class="container hero-content">
+
+
+        <!-- LEFT SIDE -->
+
+        <div class="hero-copy">
+
+            <div class="eyebrow">
+
+                Global payments for African businesses
+
+            </div>
+
+
+            <h1>
+
+                Cross-border<br>
+
+                payments,<br>
+
+                <span>
+                    made simple.
+                </span>
+
+            </h1>
+
+
+            <p class="hero-description">
+
+                Pay suppliers abroad fast and conveniently.
+
+                <strong>Falswifty</strong>
+
+                helps businesses make USD and RMB payments
+                while providing reliable crypto exchange services.
+
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <a
+                    href="https://wa.me/message/OIZUBAWGTHA5D1"
+                    class="btn btn-primary">
+
+                    Contact us on WhatsApp →
+
+                </a>
+
+
+                <a
+                    href="#services"
+                    class="btn btn-outline">
+
+                    Explore Services
+
+                </a>
+
+            </div>
+
+
+
+            <div class="hero-features">
+
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        ⚡
+                    </div>
+
+                    <strong>
+                        Fast<br>
+                        Payments
+                    </strong>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        🛡️
+                    </div>
+
+                    <strong>
+                        Reliable<br>
+                        Transactions
+                    </strong>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        💰
+                    </div>
+
+                    <strong>
+                        Low<br>
+                        Fees
+                    </strong>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                       💼
+                    </div>
+
+                    <strong>
+                        Business<br>
+                        Friendly
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ==================================================
+             LIVE MARKET CARD
+        ================================================== -->
+
+        <div class="rate-card" id="rates">
+
+
+            <div class="rate-header">
+
+                <div>
+
+                    <h2>
+                        Live Market Prices
+                    </h2>
+
+                    <p class="rate-subtitle">
+                        Reference market prices in USD
+                    </p>
+
+                </div>
+
+
+                <span class="live">
+
+                    <span class="live-pulse"></span>
+
+                    Live
+
+                </span>
+
+            </div>
+
+
+
+            <!-- BTC -->
+
+            <div class="rate-item">
+
+                <div class="coin">
+
+                    <div class="coin-icon btc">
+                        ₿
+                    </div>
+
+                    <div class="coin-name">
+
+                        <strong>
+                            BTC
+                        </strong>
+
+                        <span>
+                            Bitcoin
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="price">
+
+                    <strong id="btcPrice">
+                        Loading...
+                    </strong>
+
+                    <span
+                        class="price-change neutral"
+                        id="btcChange">
+
+                        —
+
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- USDT -->
+
+            <div class="rate-item">
+
+                <div class="coin">
+
+                    <div class="coin-icon usdt">
+                        ₮
+                    </div>
+
+                    <div class="coin-name">
+
+                        <strong>
+                            USDT
+                        </strong>
+
+                        <span>
+                            Tether
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="price">
+
+                    <strong id="usdtPrice">
+                        Loading...
+                    </strong>
+
+                    <span
+                        class="price-change neutral"
+                        id="usdtChange">
+
+                        —
+
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ETH -->
+
+            <div class="rate-item">
+
+                <div class="coin">
+
+                    <div class="coin-icon eth">
+                        Ξ
+                    </div>
+
+                    <div class="coin-name">
+
+                        <strong>
+                            ETH
+                        </strong>
+
+                        <span>
+                            Ethereum
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="price">
+
+                    <strong id="ethPrice">
+                        Loading...
+                    </strong>
+
+                    <span
+                        class="price-change neutral"
+                        id="ethChange">
+
+                        —
+
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- NGN -->
+
+            <div class="rate-item">
+
+                <div class="coin">
+
+                    <div class="coin-icon ngn">
+                        ₦
+                    </div>
+
+                    <div class="coin-name">
+
+                        <strong>
+                            NGN
+                        </strong>
+
+                        <span>
+                            Nigerian Naira
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="price">
+
+                    <strong id="ngnPrice">
+                        Loading...
+                    </strong>
+
+                    <span
+                        class="price-change neutral"
+                        id="ngnChange">
+
+                        —
+
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="rate-footer">
+
+                <span>
+                    Market reference rates
+                </span>
+
+                <span id="lastUpdated">
+                    Connecting...
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     SERVICES
+================================================== -->
+
+<section class="services" id="services">
+
+    <div class="container services-layout">
+
+
+        <div class="services-intro">
+
+            <span class="section-label">
+                Our Services
+            </span>
+
+
+            <h2>
+
+                Everything Your<br>
+                Business Needs
+
+            </h2>
+
+
+            <p>
+
+                From supplier payments to crypto exchange,
+                Falswifty helps make global transactions
+                straightforward for businesses.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="service-grid">
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    🇺🇸
+                </div>
+
+                <h3>
+                    USD Payments
+                </h3>
+
+                <p>
+
+                    Make USD payments to suppliers
+                    and businesses abroad conveniently.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    🇨🇳
+                </div>
+
+                <h3>
+                    RMB Payments
+                </h3>
+
+                <p>
+
+                    Pay suppliers in China
+                    and keep your business moving.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    ₿ 
+                </div>
+
+                <h3>
+                    Crypto Exchange
+                </h3>
+
+                <p>
+
+                    Fast and reliable crypto to naira Payments.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     WHY CHOOSE FALSWIFTY
+================================================== -->
+
+<section class="why-us" id="why">
+
+    <div class="container">
+
+
+        <div class="section-heading">
+
+            <span class="section-label">
+
+                Why Choose Falswifty
+
+            </span>
+
+
+            <h2>
+
+                Built on Trust.<br>
+                Designed for Business.
+
+            </h2>
+
+
+            <p>
+
+                Cross-border transactions require confidence.
+                We focus on clear communication, responsive
+                service and a straightforward transaction
+                process from start to finish.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="why-grid">
+
+
+            <div class="why-card">
+
+                <div class="why-icon">
+                    ⚡
+                </div>
+
+                <h3>
+                    Fast Processing
+                </h3>
+
+                <p>
+
+                    We understand that payment delays can
+                    affect business. Transactions are handled
+                    promptly to help keep your business moving.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="why-card">
+
+                <div class="why-icon">
+                    🛡️
+                </div>
+
+                <h3>
+                    Reliable Service
+                </h3>
+
+                <p>
+
+                    From your first message to transaction
+                    completion, we keep you informed throughout
+                    the process.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="why-card">
+
+                <div class="why-icon">
+                    💱
+                </div>
+
+                <h3>
+                    Transparent Rates
+                </h3>
+
+                <p>
+
+                    You receive the applicable rate and
+                    transaction details before proceeding,
+                    helping you make informed decisions.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="why-card">
+
+                <div class="why-icon">
+                    💼
+                </div>
+
+                <h3>
+                    Business Focused
+                </h3>
+
+                <p>
+
+                    Our service is designed around businesses,
+                    importers and customers who need convenient
+                    cross-border payment and exchange solutions.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     HOW IT WORKS
+================================================== -->
+
+<section class="how-it-works" id="how">
+
+    <div class="container">
+
+
+        <div class="how-heading">
+
+            <span class="section-label">
+                How It Works
+            </span>
+
+
+            <h2>
+                Transact in 4 Simple Steps
+            </h2>
+
+
+            <p>
+
+                From getting your rate to completing the
+                transaction, the process is straightforward.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="steps">
+
+
+            <!-- STEP 1 -->
+
+            <div class="step">
+
+                <div class="step-number">
+                    1
+                </div>
+
+                <div class="step-icon">
+                    💬
+                </div>
+
+                <h3>
+                    Contact Us
+                </h3>
+
+                <p>
+
+                    Reach out to Falswifty and tell us
+                    the payment or crypto exchange
+                    transaction you want to make.
+
+                </p>
+
+            </div>
+
+
+            <div class="step-arrow">
+                →
+            </div>
+
+
+
+            <!-- STEP 2 -->
+
+            <div class="step">
+
+                <div class="step-number">
+                    2
+                </div>
+
+                <div class="step-icon">
+                    💱
+                </div>
+
+                <h3>
+                    Get Your Rate
+                </h3>
+
+                <p>
+
+                    We provide the applicable rate and
+                    transaction details for you to review
+                    before proceeding.
+
+                </p>
+
+            </div>
+
+
+            <div class="step-arrow">
+                →
+            </div>
+
+
+
+            <!-- STEP 3 -->
+
+            <div class="step">
+
+                <div class="step-number">
+                    3
+                </div>
+
+                <div class="step-icon">
+                    ↗
+                </div>
+
+                <h3>
+                    Make Payment
+                </h3>
+
+                <p>
+
+                    Make the required payment for your
+                    transaction, or send the crypto you
+                    want to exchange to Naira.
+
+                </p>
+
+            </div>
+
+
+            <div class="step-arrow">
+                →
+            </div>
+
+
+
+            <!-- STEP 4 -->
+
+            <div class="step">
+
+                <div class="step-number">
+                    4
+                </div>
+
+                <div class="step-icon">
+                    ✓
+                </div>
+
+                <h3>
+                    We Finalize It
+                </h3>
+
+                <p>
+
+                    We process your transaction promptly
+                    and confirm once your payment or
+                    exchange has been completed.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="how-action">
+
+            <a
+                href="https://wa.me/message/OIZUBAWGTHA5D1"
+                class="btn btn-primary">
+
+                Start a Transaction →
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     FINAL CTA
+================================================== -->
+
+<section class="cta-section">
+
+    <div class="container">
+
+        <div class="cta">
+
+
+            <div>
+
+                <h2>
+
+                    Take Your Business Global
+                    with Falswifty
+
+                </h2>
+
+                <p>
+
+                    Global payments built around your business.
+
+                </p>
+
+            </div>
+
+
+            <a
+                href="https://wa.me/message/OIZUBAWGTHA5D1"
+                class="whatsapp-button">
+
+                Contact Us on WhatsApp →
+
+            </a>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     FOOTER
+================================================== -->
+
+<footer>
+
+    <div class="container">
+
+
+        <div class="footer-grid">
+
+
+            <div class="footer-about">
+
+                <strong>FalSwifty</strong>
+                    
+
+
+                <p>
+
+                    Global payment solutions for businesses
+                    
+
+                </p>
+
+            </div>
+
+
+
+            <div class="footer-column">
+
+                <h4>
+                    Quick Links
+                </h4>
+
+                <a href="/">
+                    Home
+                </a>
+
+                <a href="#services">
+                    Services
+                </a>
+
+                <a href="#why">
+                    Why Us
+                </a>
+
+                <a href="#how">
+                    How It Works
+                </a>
+
+                <a href="#rates">
+                    Live Rates
+                </a>
+
+               
+            </div>
+
+
+
+            <div class="footer-column">
+
+                <h4>
+                    Services
+                </h4>
+
+                <a href="#services">
+                    USD Payments
+                </a>
+
+                <a href="#services">
+                    RMB Payments
+                </a>
+
+                <a href="#services">
+                    Cryptocurrency Exchange
+                </a>
+
+            </div>
+
+
+
+            <div class="footer-column">
+
+                <h4>
+                    Contact
+                </h4>
+
+                <a href="https://https://wa.me/message/OIZUBAWGTHA5D1">
+                    WhatsApp
+                </a>
+
+                <a href="mailto:support@falswifty.com">
+                    support@falswifty.com
+                </a>
+
+                <a href="/contact/">
+                    Contact Us
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 Falswifty. All rights reserved.
+            </span>
+
+            <span>
+                Payments Without Borders.
+            </span>
+
+        </div>
+
+
+    </div>
+
+</footer>
+
+
+
+<script>
+
+    /* ==================================================
+       MOBILE MENU
+    ================================================== */
+
+    const menuButton =
+        document.getElementById("menuButton");
+
+    const navLinks =
+        document.getElementById("navLinks");
+
+
+    menuButton.addEventListener("click", function () {
+
+        navLinks.classList.toggle("active");
+
+    });
+
+
+    document
+        .querySelectorAll(".nav-links a")
+        .forEach(function(link) {
+
+            link.addEventListener("click", function () {
+
+                navLinks.classList.remove("active");
+
+            });
+
+        });
+
+
+
+    /* ==================================================
+       PREVIOUS PRICES
+    ================================================== */
+
+    const previousPrices = {
+
+        btc: null,
+        eth: null,
+        usdt: null,
+        ngn: null
+
+    };
+
+
+
+    /* ==================================================
+       DISPLAY / ANIMATE PRICE
+    ================================================== */
+
+    function displayPrice(
+        coin,
+        newPrice,
+        decimals
+    ) {
+
+        const priceElement =
+            document.getElementById(
+                coin + "Price"
+            );
+
+        const changeElement =
+            document.getElementById(
+                coin + "Change"
+            );
+
+
+        const previousPrice =
+            previousPrices[coin];
+
+
+        /* DISPLAY CURRENT PRICE */
+
+        priceElement.textContent =
+
+            "$" +
+
+            newPrice.toLocaleString(
+                "en-US",
+                {
+                    minimumFractionDigits: decimals,
+                    maximumFractionDigits: decimals
+                }
+            );
+
+
+
+        /* FIRST PRICE LOAD */
+
+        if (previousPrice === null) {
+
+            changeElement.textContent =
+                "● Live";
+
+            changeElement.className =
+                "price-change neutral";
+
+            previousPrices[coin] =
+                newPrice;
+
+            return;
+        }
+
+
+
+        /* CALCULATE MOVEMENT */
+
+        const difference =
+            newPrice - previousPrice;
+
+
+        const percentageChange =
+            previousPrice !== 0
+                ? (difference / previousPrice) * 100
+                : 0;
+
+
+
+        priceElement.classList.remove(
+            "price-up-flash",
+            "price-down-flash"
+        );
+
+
+
+        /* PRICE UP */
+
+        if (newPrice > previousPrice) {
+
+            changeElement.className =
+                "price-change up";
+
+            changeElement.textContent =
+
+                "▲ +" +
+
+                percentageChange.toFixed(4) +
+
+                "%";
+
+
+            priceElement.classList.add(
+                "price-up-flash"
+            );
+
+        }
+
+
+        /* PRICE DOWN */
+
+        else if (newPrice < previousPrice) {
+
+            changeElement.className =
+                "price-change down";
+
+            changeElement.textContent =
+
+                "▼ " +
+
+                percentageChange.toFixed(4) +
+
+                "%";
+
+
+            priceElement.classList.add(
+                "price-down-flash"
+            );
+
+        }
+
+
+        /* NO MOVEMENT */
+
+        else {
+
+            changeElement.className =
+                "price-change neutral";
+
+            changeElement.textContent =
+                "— 0.0000%";
+
+        }
+
+
+
+        /* REMOVE PRICE FLASH */
+
+        setTimeout(function () {
+
+            priceElement.classList.remove(
+                "price-up-flash",
+                "price-down-flash"
+            );
+
+        }, 900);
+
+
+
+        /* STORE NEW PRICE */
+
+        previousPrices[coin] =
+            newPrice;
+
+    }
+
+
+
+    /* ==================================================
+       CRYPTO LIVE PRICES
+    ================================================== */
+
+    async function updateCryptoRates() {
+
+        try {
+
+            const response =
+                await fetch(
+
+                    "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,tether&vs_currencies=usd"
+
+                );
+
+
+            if (!response.ok) {
+
+                throw new Error(
+                    "Crypto API request failed"
+                );
+
+            }
+
+
+            const data =
+                await response.json();
+
+
+
+            displayPrice(
+                "btc",
+                data.bitcoin.usd,
+                2
+            );
+
+
+            displayPrice(
+                "eth",
+                data.ethereum.usd,
+                2
+            );
+
+
+            displayPrice(
+                "usdt",
+                data.tether.usd,
+                4
+            );
+
+
+            updateTime();
+
+        }
+
+        catch (error) {
+
+            console.error(
+                "Crypto price update failed:",
+                error
+            );
+
+        }
+
+    }
+
+
+
+    /* ==================================================
+       NGN / USD LIVE REFERENCE
+    ================================================== */
+
+    async function updateNairaRate() {
+
+        try {
+
+            const response =
+                await fetch(
+
+                    "https://open.er-api.com/v6/latest/USD"
+
+                );
+
+
+            if (!response.ok) {
+
+                throw new Error(
+                    "FX API request failed"
+                );
+
+            }
+
+
+            const data =
+                await response.json();
+
+
+            const usdToNgn =
+                data.rates.NGN;
+
+
+            /*
+                Since the card displays everything in USD:
+
+                NGN shows the USD value of ₦1.
+            */
+
+            const oneNairaInUsd =
+                1 / usdToNgn;
+
+
+            displayPrice(
+                "ngn",
+                oneNairaInUsd,
+                6
+            );
+
+
+            updateTime();
+
+        }
+
+        catch (error) {
+
+            console.error(
+                "NGN price update failed:",
+                error
+            );
+
+        }
+
+    }
+
+
+
+    /* ==================================================
+       LAST UPDATED TIME
+    ================================================== */
+
+    function updateTime() {
+
+        const now =
+            new Date();
+
+
+        const time =
+            now.toLocaleTimeString(
+                [],
+                {
+                    hour: "2-digit",
+                    minute: "2-digit",
+                    second: "2-digit"
+                }
+            );
+
+
+        document
+            .getElementById("lastUpdated")
+            .textContent =
+
+            "Updated " + time;
+
+    }
+
+
+
+    /* ==================================================
+       START MARKET DATA
+    ================================================== */
+
+    updateCryptoRates();
+
+    updateNairaRate();
+
+
+
+    /* Crypto refresh every 30 seconds */
+
+    setInterval(
+        updateCryptoRates,
+        30000
+    );
+
+
+
+    /* NGN reference refresh every 5 minutes */
+
+    setInterval(
+        updateNairaRate,
+        300000
+    );
+
+</script>
+
+
+</body>
+
+</html>
