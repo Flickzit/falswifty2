@@ -11,6 +11,292 @@
     box-sizing:border-box;
     font-family:'Inter', sans-serif;
 }
+/* ==========================================
+   FALSWIFTY CHATBOT
+=========================================== */
+
+.chatbot {
+    position: fixed;
+
+    right: 25px;
+    bottom: 25px;
+
+    z-index: 9999;
+}
+
+
+/* CHAT BUTTON */
+
+.chat-button {
+    width: 62px;
+    height: 62px;
+
+    display: grid;
+    place-items: center;
+
+    border: none;
+    border-radius: 40%;
+
+    background: #0753aa;
+    color: white;
+
+    font-size: 26px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 30px rgba(0, 90, 200, .35);
+
+    transition: .25s;
+}
+
+.chat-button:hover {
+    transform: scale(1.07);
+}
+
+
+/* CHAT WINDOW */
+
+.chat-window {
+    position: absolute;
+
+    right: 0;
+    bottom: 78px;
+
+    width: 360px;
+    height: 500px;
+
+    display: none;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    border-radius: 18px;
+
+    background: white;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.25);
+}
+
+.chat-window.active {
+    display: flex;
+}
+
+
+/* HEADER */
+
+.chat-header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0b507b,
+            #31547c
+        );
+
+    color: white;
+}
+
+.chat-header strong {
+    display: block;
+
+    font-size: 15px;
+}
+
+.chat-header span {
+    display: block;
+
+    margin-top: 4px;
+
+    font-size: 10px;
+
+    color: #81d19a;
+}
+
+.chat-header button {
+    border: none;
+    background: transparent;
+
+    color: rgb(233, 237, 239);
+
+    font-size: 26px;
+
+    cursor: pointer;
+}
+
+
+/* MESSAGES */
+
+.chat-messages {
+    flex: 1;
+
+    padding: 18px;
+
+    overflow-y: auto;
+
+    background: #f5f8fc;
+}
+
+
+/* BOT MESSAGE */
+
+.bot-message {
+    max-width: 82%;
+
+    margin-bottom: 12px;
+
+    padding: 12px 14px;
+
+    border-radius:
+        14px 14px 14px 4px;
+
+    background: rgb(226, 226, 226);
+
+    color: #263445;
+
+    font-size: 13px;
+    line-height: 1.5;
+
+    box-shadow:
+        0 3px 10px rgba(0,0,0,.05);
+}
+
+
+/* CUSTOMER MESSAGE */
+
+.user-message {
+    max-width: 82%;
+
+    margin-left: auto;
+    margin-bottom: 12px;
+
+    padding: 12px 14px;
+
+    border-radius:
+        14px 14px 4px 14px;
+
+    background: #0e4a8e;
+
+    color: white;
+
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+
+/* QUICK OPTIONS */
+
+.quick-options {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+    margin-top: 15px;
+}
+
+.quick-options button {
+    padding: 8px 11px;
+
+    border: 1px solid #0878f900;
+    border-radius: 20px;
+
+    background: rgb(12, 87, 149);
+
+    color: #ebecec;
+
+    font-size: 11px;
+
+    cursor: pointer;
+}
+
+.quick-options button:hover {
+    background: #0f55a5;
+    color: white;
+}
+
+
+/* INPUT */
+
+.chat-input {
+    display: flex;
+
+    gap: 8px;
+
+    padding: 12px;
+
+    border-top:
+        1px solid #e7edf3;
+
+    background: white;
+}
+
+.chat-input input {
+    flex: 1;
+
+    min-width: 0;
+
+    padding: 12px;
+
+    border:
+        1px solid #dce4ec;
+
+    border-radius: 10px;
+
+    outline: none;
+
+    font-size: 13px;
+}
+
+.chat-input input:focus {
+    border-color: #1154a1;
+}
+
+.chat-input button {
+    width: 43px;
+    height: 43px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #0a4486;
+
+    color: white;
+
+    cursor: pointer;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 480px) {
+
+    .chatbot {
+        right: 15px;
+        bottom: 15px;
+    }
+
+    .chat-window {
+        position: fixed;
+
+        left: 15px;
+        right: 15px;
+
+        bottom: 90px;
+
+        width: auto;
+        height: 70vh;
+    }
+
+}
 
 body{
     background:linear-gradient(90deg, #fbfbfb, #8f9192);
@@ -246,6 +532,308 @@ form.addEventListener("submit", async function(event) {
     }
 });
 </script>
+<!-- ==========================================
+     FALSWIFTY CHATBOT
+=========================================== -->
 
+<div class="chatbot">
+
+    <!-- CHAT WINDOW -->
+    <div class="chat-window" id="chatWindow">
+
+        <div class="chat-header">
+
+            <div>
+                <strong>Falswifty Assistant</strong>
+                <span>● Online</span>
+            </div>
+
+            <button id="closeChat">×</button>
+
+        </div>
+
+
+        <div class="chat-messages" id="chatMessages">
+
+            <div class="bot-message">
+
+                👋 Hi! Welcome to Falswifty.
+
+                <br><br>
+
+                How can I help you today?
+
+            </div>
+
+            <div class="quick-options">
+
+                <button onclick="quickMessage('I want to make an RMB payment')">
+                    RMB Payment
+                </button>
+
+                <button onclick="quickMessage('I want to make a USD payment')">
+                    USD Payment
+                </button>
+
+                <button onclick="quickMessage('I want to exchange crypto')">
+                    Crypto Exchange
+                </button>
+
+                <button onclick="quickMessage('I want to get the current rate')">
+                    Get Rate
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <form class="chat-input" id="chatForm">
+
+            <input
+                type="text"
+                id="chatInput"
+                placeholder="Type your message..."
+                autocomplete="off"
+                required>
+
+            <button type="submit">
+                ➤
+            </button>
+
+        </form>
+
+    </div>
+
+
+    <!-- FLOATING CHAT BUTTON -->
+
+    <button class="chat-button" id="chatButton">
+        💬
+    </button>
+
+</div>
+<script>
+
+const chatButton =
+    document.getElementById("chatButton");
+
+const chatWindow =
+    document.getElementById("chatWindow");
+
+const closeChat =
+    document.getElementById("closeChat");
+
+const chatForm =
+    document.getElementById("chatForm");
+
+const chatInput =
+    document.getElementById("chatInput");
+
+const chatMessages =
+    document.getElementById("chatMessages");
+
+
+/* OPEN CHAT */
+
+chatButton.addEventListener("click", function() {
+
+    chatWindow.classList.toggle("active");
+
+});
+
+
+/* CLOSE CHAT */
+
+closeChat.addEventListener("click", function() {
+
+    chatWindow.classList.remove("active");
+
+});
+
+
+/* SEND MESSAGE */
+
+chatForm.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const message =
+        chatInput.value.trim();
+
+    if (!message) return;
+
+    sendMessage(message);
+
+});
+
+
+/* QUICK BUTTONS */
+
+function quickMessage(message) {
+
+    sendMessage(message);
+
+}
+
+
+/* DISPLAY CUSTOMER MESSAGE */
+
+async function sendMessage(message) {
+
+    /* YOUR MAKE WEBHOOK */
+
+    const webhookURL =
+        "https://hook.us2.make.com/aizixccpxqwbrjnorb98ifwfihf19m3d";
+
+
+    /* SHOW CUSTOMER MESSAGE */
+
+    const messageDiv =
+        document.createElement("div");
+
+    messageDiv.className =
+        "user-message";
+
+    messageDiv.textContent =
+        message;
+
+    chatMessages.appendChild(
+        messageDiv
+    );
+
+
+    chatInput.value = "";
+
+
+    chatMessages.scrollTop =
+        chatMessages.scrollHeight;
+
+
+
+    /* SHOW TEMPORARY LOADING MESSAGE */
+
+    const loadingMessage =
+        document.createElement("div");
+
+    loadingMessage.className =
+        "bot-message";
+
+    loadingMessage.textContent =
+        "Typing...";
+
+    chatMessages.appendChild(
+        loadingMessage
+    );
+
+
+    chatMessages.scrollTop =
+        chatMessages.scrollHeight;
+
+
+
+    try {
+
+        /* SEND CUSTOMER MESSAGE TO MAKE */
+
+        const response =
+            await fetch(
+                webhookURL,
+                {
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type":
+                            "application/json"
+                    },
+
+                    body: JSON.stringify({
+
+                        message: message,
+
+                        sessionId:
+                            getSessionId(),
+
+                        source:
+                            "Falswifty Website"
+
+                    })
+
+                }
+            );
+
+
+        if (!response.ok) {
+    throw new Error("Webhook request failed");
+}
+
+/* GET AI RESPONSE FROM MAKE */
+
+const aiReply = await response.text();
+
+/* REPLACE "TYPING..." WITH AI ANSWER */
+
+loadingMessage.textContent = aiReply;
+
+chatMessages.scrollTop =
+    chatMessages.scrollHeight;
+
+
+    }
+
+    catch(error) {
+
+        console.error(
+            "Chatbot error:",
+            error
+        );
+
+
+        loadingMessage.textContent =
+            "Sorry, I couldn't connect right now. Please try again.";
+
+    }
+
+}
+
+
+
+/* ==========================================
+   CUSTOMER SESSION ID
+========================================== */
+
+function getSessionId() {
+
+    let sessionId =
+        sessionStorage.getItem(
+            "falswiftyChatSession"
+        );
+
+
+    if (!sessionId) {
+
+        sessionId =
+            "FS-" +
+            Date.now() +
+            "-" +
+            Math.random()
+                .toString(36)
+                .substring(2, 8);
+
+
+        sessionStorage.setItem(
+            "falswiftyChatSession",
+            sessionId
+        );
+
+    }
+
+
+    return sessionId;
+
+}
+
+
+</script>
 </body>
 </html>
