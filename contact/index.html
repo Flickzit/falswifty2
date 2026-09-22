@@ -22,6 +22,7 @@
     bottom: 25px;
 
     z-index: 9999;
+    margin-bottom: 35px;
 }
 
 
@@ -37,7 +38,7 @@
     border: none;
     border-radius: 40%;
 
-    background: #0753aa;
+    background: #06567e;
     color: white;
 
     font-size: 26px;
@@ -51,20 +52,20 @@
 }
 
 .chat-button:hover {
-    transform: scale(1.07);
+    transform: scale(1.13);
 }
 
 
 /* CHAT WINDOW */
 
 .chat-window {
-    position: absolute;
+    position: fixed;
 
-    right: 0;
+    right: 50px;
     bottom: 78px;
 
-    width: 360px;
-    height: 500px;
+    width: 400px;
+    height: 650px;
 
     display: none;
     flex-direction: column;
@@ -165,7 +166,7 @@
     line-height: 1.5;
 
     box-shadow:
-        0 3px 10px rgba(0,0,0,.05);
+        0 3px 10px rgba(0, 0, 0, 0.21);
 }
 
 
@@ -182,7 +183,7 @@
     border-radius:
         14px 14px 4px 14px;
 
-    background: #0e4a8e;
+    background: #0b5f89;
 
     color: white;
 
@@ -201,6 +202,7 @@
     gap: 7px;
 
     margin-top: 15px;
+    margin-bottom: 20px;
 }
 
 .quick-options button {
@@ -209,7 +211,7 @@
     border: 1px solid #0878f900;
     border-radius: 20px;
 
-    background: rgb(12, 87, 149);
+    background: rgb(149, 51, 12);
 
     color: #ebecec;
 
@@ -257,7 +259,7 @@
 }
 
 .chat-input input:focus {
-    border-color: #1154a1;
+    border-color: #0b5f89;
 }
 
 .chat-input button {
@@ -267,7 +269,7 @@
     border: none;
     border-radius: 10px;
 
-    background: #0a4486;
+    background: #0b5f89;
 
     color: white;
 
@@ -308,6 +310,7 @@ header{
     justify-content:space-between;
     align-items:center;
     padding:15px 8%;
+    margin-top: -70px;
 }
 
 .logo img {
@@ -333,6 +336,7 @@ nav a:hover{
     justify-content:space-between;
     flex-wrap:wrap;
     gap:40px;
+    margin-top: -100px;
 }
 
 .contact-info{
@@ -376,6 +380,8 @@ nav a:hover{
     border-radius:20px;
     backdrop-filter:blur(15px);
     box-shadow:0 20px 40px rgba(0,0,0,0.4);
+    margin-right: -40px;
+    margin-top: -30px;
 }
 
 .contact-form h3{
@@ -416,7 +422,7 @@ footer{
     background:#0b1220;
     color:#94a3b8;
     font-size:14px;
-    margin-top:60px;
+    margin-top:40px;
 }
 
 @media(max-width:900px){
